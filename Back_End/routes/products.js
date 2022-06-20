@@ -15,7 +15,6 @@ productRouter.post("/create", async (req, res) => {
 productRouter.get("/all", async (req, res) => {
   try {
     let products = await Product.find();
-    console.log(products);
     res.status(200).json(products);
   } catch (error) {
     res.status(500).send({ message: error.message });
